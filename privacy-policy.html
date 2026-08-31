@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Privacy Policy — Viajes ADDA</title>
+
+  <meta
+    name="description"
+    content="Privacy Policy of Viajes ADDA. Learn how we collect, use, store and protect personal information."
+  >
+
+  <meta name="theme-color" content="#112B20">
+
+  <!-- Google Fonts used by the main Viajes ADDA website -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --dark-green: #112B20;
+      --green: #1A4330;
+      --medium-green: #2E6B4F;
+      --gold: #C9A840;
+      --light-gold: #DFC068;
+      --cream: #F7F2E8;
+      --warm-white: #EDE5D0;
+      --text: #1A1208;
+      --muted: #5A4E3A;
+      --light-text: #8A7A60;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      background: var(--dark-green);
+      border-bottom: 1px solid rgba(201, 168, 64, 0.25);
+    }
+
+    .topbar-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 18px 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      color: var(--gold);
+      text-decoration: none;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .home-link {
+      color: rgba(247, 242, 232, 0.68);
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .home-link:hover {
+      color: var(--gold);
+    }
+
+    /* LANGUAGE SELECTOR */
+
+    .language-switch {
+      display: flex;
+      align-items: center;
+
+      border: 1px solid rgba(201, 168, 64, 0.36);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .language-switch button {
+      border: 0;
+      background: transparent;
+      color: rgba(247, 242, 232, 0.7);
+
+      padding: 8px 11px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .language-switch button.active {
+      background: var(--gold);
+      color: var(--dark-green);
+    }
+
+    .language-switch button:focus-visible {
+      outline: 2px solid var(--light-gold);
+      outline-offset: -2px;
+    }
+
+    /* HERO */
+
+    .policy-hero {
+      background:
+        linear-gradient(
+          135deg,
+          #0a1f15 0%,
+          var(--dark-green) 45%,
+          var(--green) 100%
+        );
+
+      padding: 86px 28px 82px;
+    }
+
+    .policy-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 22px;
+
+      color: var(--light-gold);
+      font-size: 0.62rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--light-gold);
+    }
+
+    h1 {
+      color: var(--cream);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.7rem, 7vw, 4.6rem);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 680px;
+
+      color: rgba(247, 242, 232, 0.72);
+      font-size: 0.93rem;
+      line-height: 1.8;
+    }
+
+    .updated {
+      margin-top: 24px;
+
+      color: var(--gold);
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* MAIN CONTENT */
+
+    main {
+      padding: 70px 28px 90px;
+    }
+
+    .policy-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .controller-box {
+      background: var(--warm-white);
+      border-left: 3px solid var(--gold);
+
+      padding: 24px 26px;
+      margin-bottom: 54px;
+    }
+
+    .controller-box strong {
+      color: var(--dark-green);
+      font-weight: 500;
+    }
+
+    .controller-box p {
+      color: var(--muted);
+      font-size: 0.87rem;
+      line-height: 1.75;
+    }
+
+    .controller-box p + p {
+      margin-top: 5px;
+    }
+
+    .pending {
+      color: #815f1b;
+      font-weight: 500;
+    }
+
+    .policy-section {
+      padding: 0 0 38px;
+      margin-bottom: 38px;
+
+      border-bottom: 1px solid rgba(90, 78, 58, 0.15);
+    }
+
+    .section-number {
+      margin-bottom: 5px;
+
+      color: var(--gold);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+
+      color: var(--dark-green);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 4vw, 2.05rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .policy-section p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    .policy-section p + p {
+      margin-top: 15px;
+    }
+
+    .policy-section ul {
+      margin: 16px 0 0 20px;
+    }
+
+    .policy-section li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 7px;
+      padding-left: 5px;
+    }
+
+    .policy-section a,
+    .controller-box a,
+    .contact-card a {
+      color: var(--green);
+      font-weight: 400;
+      text-underline-offset: 3px;
+    }
+
+    .contact-card {
+      margin-top: 48px;
+      padding: 32px;
+
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    .contact-card .section-number {
+      color: var(--light-gold);
+    }
+
+    .contact-card h2 {
+      color: var(--cream);
+    }
+
+    .contact-card p {
+      color: rgba(247, 242, 232, 0.78);
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+
+    .contact-card strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .contact-card a {
+      color: var(--light-gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark-green);
+      border-top: 1px solid rgba(201, 168, 64, 0.12);
+
+      padding: 28px;
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      color: var(--gold);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      color: rgba(247, 242, 232, 0.42);
+      font-size: 0.7rem;
+    }
+
+    /* LANGUAGE VISIBILITY */
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+
+      .topbar-inner {
+        padding: 15px 18px;
+      }
+
+      .brand {
+        font-size: 0.9rem;
+        letter-spacing: 0.16em;
+      }
+
+      .home-link {
+        display: none;
+      }
+
+      .header-actions {
+        gap: 10px;
+      }
+
+      .policy-hero {
+        padding: 64px 20px 60px;
+      }
+
+      main {
+        padding: 48px 20px 68px;
+      }
+
+      .controller-box {
+        padding: 20px;
+      }
+
+      .contact-card {
+        padding: 25px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <a class="brand" href="index.html" aria-label="Viajes ADDA home">
+
+        <svg
+          class="brand-mark"
+          viewBox="0 0 26 32"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect
+            x=".7"
+            y=".7"
+            width="24.6"
+            height="30.6"
+            rx="1"
+            stroke="#C9A840"
+            stroke-width="1"
+          />
+
+          <path
+            d="M13 4L22 28M13 4L4 28"
+            stroke="#C9A840"
+            stroke-width="1.15"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M7.5 18H18.5"
+            stroke="#C9A840"
+            stroke-width=".95"
+            stroke-linecap="round"
+          />
+        </svg>
+
+        <span>Viajes ADDA</span>
+      </a>
+
+      <div class="header-actions">
+
+        <a class="home-link" href="index.html">
+          Back to website
+        </a>
+
+        <div
+          class="language-switch"
+          aria-label="Select language"
+        >
+          <button
+            type="button"
+            id="btn-en"
+            class="active"
+            aria-pressed="true"
+            onclick="setLanguage('en')"
+          >
+            EN
+          </button>
+
+          <button
+            type="button"
+            id="btn-es"
+            aria-pressed="false"
+            onclick="setLanguage('es')"
+          >
+            ES
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+       ENGLISH VERSION
+       ========================================================= -->
+
+  <div id="content-en">
+
+    <section class="policy-hero">
+      <div class="policy-hero-inner">
+
+        <div class="eyebrow">
+          Privacy &amp; Personal Information
+        </div>
+
+        <h1>Privacy Policy</h1>
+
+        <p class="hero-description">
+          This Privacy Policy explains how ViajesADDA collects, uses,
+          stores and shares personal information when you contact us,
+          request information, schedule a meeting or purchase
+          travel-related services.
+        </p>
+
+        <p class="updated">
+          Last updated: August 28, 2026
+        </p>
+
+      </div>
+    </section>
+
+
+    <main>
+      <div class="policy-wrapper">
+
+        <div class="controller-box">
+          <p>
+            <strong>Data Controller:</strong>
+            Andrea Dussan, acting as the individual responsible for ViajesADDA.
+          </p>
+
+          <p>
+            <strong>Business location:</strong>
+            <span class="pending">Pending confirmation</span>
+          </p>
+
+          <p>
+            <strong>Address:</strong>
+            <span class="pending">Pending confirmation</span>
+          </p>
+
+          <p>
+            <strong>Telephone:</strong>
+            <span class="pending">Pending confirmation</span>
+          </p>
+
+          <p>
+            <strong>Privacy email:</strong>
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>
+          </p>
+        </div>
+
+
+        <section class="policy-section">
+          <div class="section-number">01</div>
+          <h2>Information We Collect</h2>
+
+          <p>
+            During an initial contact, ViajesADDA may collect information
+            such as your full name, email address, telephone number,
+            country and city of residence, age, travel interests,
+            preferences and previous travel experiences.
+          </p>
+
+          <p>
+            If you decide to purchase a travel service, ViajesADDA may
+            request additional information required to organize and
+            deliver that service. Depending on the trip, this may include
+            identification or passport information, information required
+            for travel insurance, and information necessary to arrange
+            flights, accommodation, transportation, tours, excursions or
+            other components of the selected experience.
+          </p>
+
+          <p>
+            ViajesADDA seeks to collect only the information reasonably
+            necessary for the purpose for which it is requested.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">02</div>
+          <h2>How We Collect Personal Information</h2>
+
+          <p>
+            Personal information may be collected through the ViajesADDA
+            website, registration and inquiry forms, email, WhatsApp
+            Business, telephone conversations, meetings, reservation
+            processes and other direct communications with the client.
+          </p>
+
+          <p>
+            Some technical information may also be processed by the
+            technology providers used to operate the website, forms,
+            communications and booking services.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">03</div>
+          <h2>How We Use Your Information</h2>
+
+          <p>
+            ViajesADDA may use personal information to respond to
+            inquiries, understand travel preferences, prepare personalized
+            proposals, coordinate itineraries and reservations, provide
+            purchased travel services, communicate changes concerning a
+            trip, provide customer support, maintain client and prospect
+            records and improve its services.
+          </p>
+
+          <p>
+            Information may also be used for reasonable commercial
+            follow-up and, where the user has provided the required
+            authorization, to send information about ViajesADDA
+            experiences, promotions, discounts, new packages and related
+            travel content.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">04</div>
+          <h2>Legal Basis and Consent</h2>
+
+          <p>
+            ViajesADDA processes personal information based on the
+            authorization provided by the data subject and, when
+            applicable, because processing is necessary to respond to a
+            request, take steps prior to entering into a contract, perform
+            a travel service contract, comply with legal obligations or
+            pursue legitimate business purposes permitted by applicable
+            law.
+          </p>
+
+          <p>
+            Where consent is the appropriate legal basis, the user may
+            withdraw that consent in accordance with applicable law.
+            Withdrawal does not affect processing that was lawfully
+            carried out before consent was withdrawn.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">05</div>
+          <h2>Marketing Communications</h2>
+
+          <p>
+            ViajesADDA may send promotional communications only in
+            accordance with applicable data protection and electronic
+            communications rules.
+          </p>
+
+          <p>
+            Where required, the website registration process will provide
+            a separate consent option for receiving promotions, discounts,
+            information about new travel packages and other marketing
+            communications.
+          </p>
+
+          <p>
+            A person who has agreed to receive such communications may
+            later request to stop receiving them by using the available
+            unsubscribe mechanism or by contacting
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>.
+          </p>
+
+          <p>
+            Declining marketing communications will not prevent the user
+            from receiving communications that are necessary to manage an
+            inquiry, booking or contracted travel service.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">06</div>
+          <h2>Sharing Information with Travel Service Providers</h2>
+
+          <p>
+            When necessary to organize or provide a contracted trip,
+            ViajesADDA may share relevant personal information with third
+            parties involved in delivering the travel experience.
+          </p>
+
+          <p>
+            These recipients may include hotels, airlines, tour operators,
+            transportation companies, travel insurers, excursion
+            providers and other operational partners.
+          </p>
+
+          <p>
+            ViajesADDA intends to limit the information shared with these
+            providers to what is reasonably necessary for the requested
+            service.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">07</div>
+          <h2>Technology Service Providers</h2>
+
+          <p>
+            ViajesADDA uses third-party technology platforms to support
+            its business operations. Depending on how a client interacts
+            with ViajesADDA, personal information may be processed through
+            providers such as Microsoft 365, Outlook, Microsoft Bookings,
+            OneDrive, Google Workspace, Gmail, Google Drive, Notion,
+            WhatsApp Business, Formspree and Vercel.
+          </p>
+
+          <p>
+            The specific providers used may change as the business and
+            website evolve. These providers may process information
+            according to their own infrastructure, security systems and
+            privacy terms.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">08</div>
+          <h2>International Processing and Transfers</h2>
+
+          <p>
+            ViajesADDA serves clients in Colombia and international
+            markets and uses technology and tourism providers that may
+            operate or store information in different countries.
+          </p>
+
+          <p>
+            For this reason, personal information may in some
+            circumstances be processed or transferred outside the country
+            in which the client resides.
+          </p>
+
+          <p>
+            Where applicable law requires specific safeguards for an
+            international transfer, ViajesADDA will seek to use
+            appropriate mechanisms and service providers for that
+            processing.
+          </p>
+
+          <p>
+            For individuals protected by European data protection rules,
+            transfers of personal information outside the European
+            Economic Area may require legally recognized safeguards or
+            other permitted transfer mechanisms.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">09</div>
+          <h2>How Long We Keep Information</h2>
+
+          <p>
+            ViajesADDA will retain personal information for as long as
+            reasonably necessary to fulfill the purposes for which it was
+            collected, manage the relationship with clients and
+            prospective clients, provide contracted services, resolve
+            disputes and comply with applicable contractual, accounting,
+            tax or legal obligations.
+          </p>
+
+          <p>
+            Information should not be retained indefinitely when there is
+            no longer a legitimate or legal reason to keep it.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">10</div>
+          <h2>Your Privacy Rights</h2>
+
+          <p>
+            Depending on the law applicable to you, you may have the right
+            to know whether ViajesADDA processes your personal information,
+            access that information, request that inaccurate or incomplete
+            information be corrected, update your information, ask
+            questions about its use and request deletion where legally
+            permitted.
+          </p>
+
+          <p>
+            You may also have the right to withdraw an authorization or
+            consent, object to certain processing activities and lodge a
+            complaint with the competent data protection authority.
+          </p>
+
+          <p>
+            Individuals covered by European data protection legislation
+            may have additional rights, including restriction of
+            processing and data portability when the legal requirements
+            for those rights are satisfied.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">11</div>
+          <h2>How to Exercise Your Rights</h2>
+
+          <p>
+            Requests concerning personal information may be sent to
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>.
+          </p>
+
+          <p>
+            The request should provide enough information to identify the
+            person making the request and clearly explain what they wish
+            to consult, update, correct, delete or otherwise request.
+          </p>
+
+          <p>
+            ViajesADDA may request reasonable information necessary to
+            confirm the identity of the person making a privacy request
+            before disclosing or modifying personal information.
+          </p>
+
+          <p>
+            Requests will be handled within the periods established by
+            applicable legislation.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">12</div>
+          <h2>Information Security</h2>
+
+          <p>
+            ViajesADDA takes reasonable administrative and technical
+            measures intended to protect personal information against
+            unauthorized access, alteration, disclosure, loss or misuse.
+          </p>
+
+          <p>
+            Access to personal information is intended to be limited to
+            authorized persons and service providers who require it for
+            legitimate business or operational purposes.
+          </p>
+
+          <p>
+            No electronic storage or transmission system can guarantee
+            absolute security, so ViajesADDA does not represent that
+            information systems are completely immune from security risks.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">13</div>
+          <h2>Changes to This Privacy Policy</h2>
+
+          <p>
+            ViajesADDA may update this Privacy Policy when its services,
+            technology providers, business structure or applicable legal
+            requirements change.
+          </p>
+
+          <p>
+            When the policy is updated, the revised version will display
+            a new “Last updated” date. Material changes may be communicated
+            through the website or other appropriate communication
+            channels when required.
+          </p>
+        </section>
+
+
+        <section class="contact-card">
+          <div class="section-number">14</div>
+          <h2>Contact</h2>
+
+          <p>
+            Questions, requests or concerns related to privacy and
+            personal information may be sent to:
+          </p>
+
+          <p style="margin-top: 18px;">
+            <strong>Andrea Dussan</strong><br>
+            Responsible for ViajesADDA<br>
+
+            Email:
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a><br>
+
+            Location:
+            <span class="pending">Pending confirmation</span><br>
+
+            Address:
+            <span class="pending">Pending confirmation</span><br>
+
+            Telephone:
+            <span class="pending">Pending confirmation</span>
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- =========================================================
+       SPANISH VERSION
+       ========================================================= -->
+
+  <div id="content-es" hidden>
+
+    <section class="policy-hero">
+      <div class="policy-hero-inner">
+
+        <div class="eyebrow">
+          Privacidad y Datos Personales
+        </div>
+
+        <h1>Política de Privacidad</h1>
+
+        <p class="hero-description">
+          Esta Política de Privacidad explica cómo ViajesADDA recopila,
+          utiliza, conserva y comparte los datos personales cuando una
+          persona se comunica con nosotros, solicita información, agenda
+          una reunión o contrata servicios relacionados con viajes.
+        </p>
+
+        <p class="updated">
+          Última actualización: 28 de agosto de 2026
+        </p>
+
+      </div>
+    </section>
+
+
+    <main>
+      <div class="policy-wrapper">
+
+        <div class="controller-box">
+
+          <p>
+            <strong>Responsable del tratamiento:</strong>
+            Andrea Dussan, actuando como persona natural responsable de
+            ViajesADDA.
+          </p>
+
+          <p>
+            <strong>Domicilio:</strong>
+            <span class="pending">Pendiente de confirmar</span>
+          </p>
+
+          <p>
+            <strong>Dirección:</strong>
+            <span class="pending">Pendiente de confirmar</span>
+          </p>
+
+          <p>
+            <strong>Teléfono:</strong>
+            <span class="pending">Pendiente de confirmar</span>
+          </p>
+
+          <p>
+            <strong>Correo de privacidad:</strong>
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>
+          </p>
+
+        </div>
+
+
+        <section class="policy-section">
+          <div class="section-number">01</div>
+          <h2>Información que recopilamos</h2>
+
+          <p>
+            Durante el primer contacto, ViajesADDA podrá recopilar datos
+            como nombre completo, correo electrónico, número de teléfono,
+            país y ciudad de residencia, edad, intereses de viaje,
+            preferencias y experiencias previas.
+          </p>
+
+          <p>
+            Si el cliente decide contratar un servicio de viaje,
+            ViajesADDA podrá solicitar información adicional necesaria
+            para organizar y prestar el servicio. Dependiendo del viaje,
+            esto podrá incluir información de identificación o pasaporte,
+            datos necesarios para seguros de viaje e información requerida
+            para gestionar vuelos, alojamiento, transporte, excursiones u
+            otros componentes de la experiencia contratada.
+          </p>
+
+          <p>
+            ViajesADDA procurará solicitar únicamente los datos
+            razonablemente necesarios para la finalidad informada.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">02</div>
+          <h2>Cómo recopilamos los datos</h2>
+
+          <p>
+            Los datos podrán ser recopilados mediante el sitio web de
+            ViajesADDA, formularios de registro o contacto, correo
+            electrónico, WhatsApp Business, conversaciones telefónicas,
+            reuniones, procesos de reserva y otras comunicaciones directas
+            con el cliente.
+          </p>
+
+          <p>
+            Determinada información técnica también podrá ser procesada
+            por los proveedores tecnológicos utilizados para operar la
+            página web, los formularios, las comunicaciones y los sistemas
+            de reserva.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">03</div>
+          <h2>Para qué utilizamos los datos</h2>
+
+          <p>
+            ViajesADDA podrá utilizar los datos personales para responder
+            consultas, conocer las preferencias de viaje, diseñar
+            propuestas personalizadas, coordinar itinerarios y reservas,
+            prestar los servicios contratados, informar sobre cambios
+            relacionados con un viaje, atender al cliente, mantener
+            registros de clientes y prospectos y mejorar sus servicios.
+          </p>
+
+          <p>
+            Los datos también podrán utilizarse para seguimiento comercial
+            razonable y, cuando exista la autorización correspondiente,
+            para enviar información sobre experiencias de ViajesADDA,
+            promociones, descuentos, nuevos paquetes y contenidos
+            relacionados con viajes.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">04</div>
+          <h2>Autorización y bases del tratamiento</h2>
+
+          <p>
+            ViajesADDA tratará los datos personales de acuerdo con la
+            autorización otorgada por su titular y, cuando corresponda,
+            cuando el tratamiento sea necesario para responder una
+            solicitud, realizar actuaciones previas a un contrato,
+            ejecutar un servicio turístico contratado, atender
+            obligaciones legales o desarrollar finalidades empresariales
+            permitidas por la legislación aplicable.
+          </p>
+
+          <p>
+            Cuando el tratamiento dependa del consentimiento, el titular
+            podrá retirarlo en los casos permitidos por la ley, sin
+            afectar los tratamientos realizados legítimamente antes de su
+            retiro.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">05</div>
+          <h2>Comunicaciones comerciales</h2>
+
+          <p>
+            ViajesADDA podrá enviar comunicaciones promocionales de acuerdo
+            con las normas aplicables sobre protección de datos y
+            comunicaciones comerciales.
+          </p>
+
+          <p>
+            Cuando sea requerido, el proceso de registro de la página web
+            tendrá una casilla independiente de autorización para recibir
+            promociones, descuentos, nuevos paquetes y otras comunicaciones
+            de carácter comercial.
+          </p>
+
+          <p>
+            El usuario podrá solicitar posteriormente dejar de recibir
+            estas comunicaciones escribiendo a
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>.
+          </p>
+
+          <p>
+            El retiro de la autorización para recibir publicidad no
+            impedirá el envío de mensajes necesarios para responder una
+            consulta, gestionar una reserva o prestar un servicio ya
+            contratado.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">06</div>
+          <h2>Información compartida con proveedores turísticos</h2>
+
+          <p>
+            Cuando resulte necesario para organizar o ejecutar un viaje
+            contratado, ViajesADDA podrá compartir determinados datos con
+            terceros que participen en la prestación de la experiencia.
+          </p>
+
+          <p>
+            Entre ellos podrán encontrarse hoteles, aerolíneas, operadores
+            turísticos, empresas de transporte, aseguradoras de viaje,
+            proveedores de excursiones y otros aliados operativos.
+          </p>
+
+          <p>
+            La información compartida se limitará, en lo posible, a
+            aquella necesaria para prestar el servicio solicitado.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">07</div>
+          <h2>Proveedores tecnológicos</h2>
+
+          <p>
+            ViajesADDA utiliza plataformas tecnológicas de terceros para
+            apoyar su operación. Dependiendo de la interacción del cliente
+            con ViajesADDA, los datos podrán ser procesados mediante
+            servicios como Microsoft 365, Outlook, Microsoft Bookings,
+            OneDrive, Google Workspace, Gmail, Google Drive, Notion,
+            WhatsApp Business, Formspree y Vercel.
+          </p>
+
+          <p>
+            Estos proveedores pueden cambiar a medida que evolucionen el
+            negocio y la página web. Cada proveedor puede procesar
+            información mediante su propia infraestructura, sistemas de
+            seguridad y condiciones de privacidad.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">08</div>
+          <h2>Tratamiento y transferencias internacionales</h2>
+
+          <p>
+            ViajesADDA atiende clientes en Colombia y en mercados
+            internacionales y utiliza proveedores tecnológicos y
+            turísticos que pueden operar o almacenar información en
+            diferentes países.
+          </p>
+
+          <p>
+            Por esta razón, en determinadas circunstancias los datos
+            personales podrán ser tratados o transferidos fuera del país
+            de residencia del titular.
+          </p>
+
+          <p>
+            Cuando la legislación aplicable exija mecanismos específicos
+            para una transferencia internacional, ViajesADDA procurará
+            utilizar los instrumentos y proveedores apropiados para ese
+            tratamiento.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">09</div>
+          <h2>Conservación de la información</h2>
+
+          <p>
+            ViajesADDA conservará los datos durante el tiempo
+            razonablemente necesario para cumplir las finalidades para las
+            cuales fueron recopilados, gestionar la relación con clientes
+            y prospectos, prestar servicios contratados, resolver posibles
+            controversias y atender obligaciones contractuales, contables,
+            tributarias o legales.
+          </p>
+
+          <p>
+            Los datos no deberán conservarse indefinidamente cuando haya
+            desaparecido la finalidad y no exista una obligación o
+            justificación legal para mantenerlos.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">10</div>
+          <h2>Derechos de los titulares</h2>
+
+          <p>
+            De acuerdo con la legislación que resulte aplicable, el
+            titular podrá consultar sus datos, conocer el uso que se les
+            ha dado, solicitar su actualización o rectificación cuando
+            sean inexactos o incompletos y, en los casos permitidos
+            legalmente, solicitar su supresión o revocar una autorización.
+          </p>
+
+          <p>
+            También podrá presentar consultas o reclamos relacionados con
+            el tratamiento de sus datos y acudir ante la autoridad
+            competente cuando considere vulnerados sus derechos.
+          </p>
+
+          <p>
+            Cuando resulte aplicable la legislación europea, podrán existir
+            derechos adicionales, entre ellos la oposición a determinados
+            tratamientos, la limitación del tratamiento y la portabilidad
+            de los datos.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">11</div>
+          <h2>Cómo ejercer sus derechos</h2>
+
+          <p>
+            Las consultas, solicitudes o reclamos relacionados con datos
+            personales podrán enviarse a
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a>.
+          </p>
+
+          <p>
+            La solicitud deberá proporcionar información suficiente para
+            identificar al titular y explicar con claridad qué desea
+            consultar, actualizar, corregir, eliminar o solicitar.
+          </p>
+
+          <p>
+            ViajesADDA podrá solicitar información razonable para verificar
+            la identidad de la persona antes de revelar o modificar datos
+            personales.
+          </p>
+
+          <p>
+            Las solicitudes serán atendidas dentro de los términos
+            previstos por la legislación aplicable.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">12</div>
+          <h2>Seguridad de la información</h2>
+
+          <p>
+            ViajesADDA adoptará medidas administrativas y técnicas
+            razonables destinadas a proteger los datos personales frente
+            a accesos no autorizados, alteración, divulgación, pérdida o
+            uso indebido.
+          </p>
+
+          <p>
+            El acceso a la información estará limitado al personal y
+            proveedores autorizados que la requieran para finalidades
+            legítimas relacionadas con la operación del negocio o la
+            prestación del servicio.
+          </p>
+
+          <p>
+            Ningún sistema electrónico puede garantizar una seguridad
+            absoluta, por lo que ViajesADDA no afirma que sus sistemas
+            estén completamente libres de riesgos.
+          </p>
+        </section>
+
+
+        <section class="policy-section">
+          <div class="section-number">13</div>
+          <h2>Cambios en esta Política</h2>
+
+          <p>
+            ViajesADDA podrá actualizar esta Política cuando cambien sus
+            servicios, proveedores tecnológicos, estructura empresarial o
+            las normas aplicables.
+          </p>
+
+          <p>
+            Cuando se realice una actualización, la página indicará la
+            nueva fecha de última actualización. Cuando corresponda, los
+            cambios que tengan una incidencia relevante podrán comunicarse
+            mediante la página web u otros medios apropiados.
+          </p>
+        </section>
+
+
+        <section class="contact-card">
+          <div class="section-number">14</div>
+          <h2>Contacto</h2>
+
+          <p>
+            Para preguntas, consultas o solicitudes relacionadas con
+            privacidad y tratamiento de datos:
+          </p>
+
+          <p style="margin-top: 18px;">
+            <strong>Andrea Dussan</strong><br>
+            Responsable de ViajesADDA<br>
+
+            Correo:
+            <a href="mailto:privacidad@viajesadda.com">
+              privacidad@viajesadda.com
+            </a><br>
+
+            Domicilio:
+            <span class="pending">Pendiente de confirmar</span><br>
+
+            Dirección:
+            <span class="pending">Pendiente de confirmar</span><br>
+
+            Teléfono:
+            <span class="pending">Pendiente de confirmar</span>
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        Viajes ADDA
+      </div>
+
+      <div class="footer-copy">
+        © 2026 ViajesADDA · Colombia
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- LANGUAGE SWITCH -->
+  <script>
+    function setLanguage(language) {
+
+      const englishContent = document.getElementById("content-en");
+      const spanishContent = document.getElementById("content-es");
+
+      const englishButton = document.getElementById("btn-en");
+      const spanishButton = document.getElementById("btn-es");
+
+      if (language === "es") {
+
+        englishContent.hidden = true;
+        spanishContent.hidden = false;
+
+        englishButton.classList.remove("active");
+        spanishButton.classList.add("active");
+
+        englishButton.setAttribute("aria-pressed", "false");
+        spanishButton.setAttribute("aria-pressed", "true");
+
+        document.documentElement.lang = "es";
+
+        document.title = "Política de Privacidad — Viajes ADDA";
+
+      } else {
+
+        englishContent.hidden = false;
+        spanishContent.hidden = true;
+
+        englishButton.classList.add("active");
+        spanishButton.classList.remove("active");
+
+        englishButton.setAttribute("aria-pressed", "true");
+        spanishButton.setAttribute("aria-pressed", "false");
+
+        document.documentElement.lang = "en";
+
+        document.title = "Privacy Policy — Viajes ADDA";
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  </script>
+
+</body>
+</html>

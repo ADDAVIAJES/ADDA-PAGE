@@ -39,20 +39,37 @@ body{font-family:'DM Sans',sans-serif;background:var(--cr);color:var(--t);overfl
 
 /* HERO */
 .hero{min-height:100vh;background:linear-gradient(135deg,#0a1f15 0%,var(--gd) 40%,var(--g) 100%);display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;right:0;top:0;bottom:0;width:40%;background:radial-gradient(ellipse at 85% 50%,rgba(201,168,64,.06) 0%,transparent 70%)}
-.hero-content{position:relative;z-index:2;padding:80px 60px}
+/* Rejilla del hero: texto | video. minmax(0,...) impide que una columna
+   desborde sobre la otra, que es la causa habitual de solapamientos. */
+.hero-grid{position:relative;z-index:2;width:100%;max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:60px;align-items:center;padding:56px 60px}
+/* Columna del video. Ningun elemento se coloca encima: sin overlays,
+   sin gradientes, sin texto. */
+.hero-media{min-width:0;display:flex;justify-content:center;align-items:center}
+/* contain (no cover): el fotograma entra completo y NO se recorta ningun
+   borde, de modo que los rotulos del video se ven enteros.
+   La proporcion 16:9 coincide con la del archivo, asi que no quedan
+   franjas negras. max-width lo mantiene contenido en pantallas anchas. */
+.hero-video{display:block;width:100%;max-width:680px;aspect-ratio:16/9;object-fit:contain;border-radius:3px;background:#0a1f15;border:1px solid rgba(201,168,64,.18)}
+/* El brillo decorativo se reduce al lado del texto: ocupaba el 40% derecho,
+   que es exactamente donde ahora vive el video, y el brief pide que nada
+   quede por encima de el. */
+.hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:45%;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,64,.06) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:2;min-width:0}
 .hero-eye{display:flex;align-items:center;gap:12px;font-size:.64rem;letter-spacing:.44em;text-transform:uppercase;color:var(--gl);margin-bottom:36px}
 .hero-eye::before{content:'';width:28px;height:1px;background:var(--gl);flex-shrink:0}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5.2vw,4.2rem);font-weight:300;color:var(--cr);line-height:1.1;letter-spacing:-.01em;margin-bottom:24px;max-width:16ch}
 h1 em{font-style:italic;color:var(--gl)}
 .hero-sub{font-size:1rem;color:rgba(247,242,232,.75);line-height:1.85;max-width:520px;margin-bottom:14px;font-weight:300}
-.hero-note{font-size:.8rem;color:rgba(247,242,232,.35);font-style:italic;margin-bottom:44px}
+.hero-note{font-size:.8rem;color:rgba(247,242,232,.35);font-style:italic;margin-bottom:34px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
 .btn-g{background:var(--gold);color:var(--gd);border:none;padding:14px 30px;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;transition:background .3s,transform .2s}
 .btn-g:hover{background:var(--gl);transform:translateY(-2px)}
 .btn-o{border:1px solid rgba(201,168,64,.38);color:var(--gl);background:transparent;padding:14px 30px;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;transition:all .3s}
 .btn-o:hover{background:rgba(201,168,64,.08);border-color:var(--gold)}
-.hero-stats{position:absolute;bottom:60px;right:60px;z-index:2;display:flex;flex-direction:column;gap:14px}
+/* Las estadisticas dejan de flotar en absoluto sobre la esquina derecha
+   (ahi va el video) y pasan a fluir dentro de la columna de texto. */
+.hero-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px}
+.hero-stats .stat{flex:1 1 150px}
 .stat{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,64,.16);border-left:3px solid var(--gold);padding:13px 22px}
 .stat-n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:var(--gold);line-height:1}
 .stat-l{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,242,232,.33);margin-top:3px}
@@ -73,7 +90,7 @@ h2 em{font-style:italic}
 
 /* APPROACH */
 .approach-bg{background:var(--w)}
-.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
+.approach-grid{display:grid;grid-template-columns:1fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
 .approach-text h2{margin-bottom:20px}
 .approach-text p{font-size:.92rem;color:var(--m);line-height:1.88;font-weight:300;margin-bottom:14px}
 .approach-text strong{color:var(--g);font-weight:500}
@@ -232,15 +249,26 @@ h2 em{font-style:italic}
 .contact-fine{font-size:.69rem;color:rgba(247,242,232,.18);font-style:italic;margin-top:20px}
 
 /* FOOTER */
-footer{background:var(--gd);border-top:1px solid rgba(201,168,64,.09);padding:30px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.f-logo{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.f-logo span{display:block;font-size:.52rem;font-weight:300;letter-spacing:.34em;color:rgba(201,168,64,.33);margin-top:2px}
-.f-contact a{font-size:.7rem;color:rgba(247,242,232,.38);text-decoration:none}
-.f-social{display:flex;gap:10px}
-.f-social a{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid rgba(201,168,64,.16);border-radius:50%;color:rgba(247,242,232,.33);text-decoration:none;transition:all .3s}
-.f-social a:hover{border-color:var(--gold);color:var(--gold)}
-.f-copy{font-size:.6rem;color:rgba(247,242,232,.15)}
+/* FOOTER */
+/* FOOTER */
 
+footer{background:var(--gd);border-top:1px solid rgba(201,168,64,.09);padding:30px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+
+.f-logo span{display:block;font-size:.52rem;font-weight:300;letter-spacing:.34em;color:rgba(201,168,64,.33);margin-top:2px}
+
+.f-contact a{font-size:.85rem;color:rgba(247,242,232,.38);text-decoration:none}
+
+.f-social{display:flex;gap:10px}
+
+.f-social a{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid rgba(201,168,64,.16);border-radius:50%;color:rgba(247,242,232,.33);text-decoration:none;transition:all .3s}
+
+.f-social a svg{width:26px;height:26px}
+
+.f-social a:hover{border-color:var(--gold);color:var(--gold)}
+
+.f-copy{font-size:.6rem;color:rgba(247,242,232,.15)}
 /* REVEAL */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:none}
@@ -249,8 +277,8 @@ footer{background:var(--gd);border-top:1px solid rgba(201,168,64,.09);padding:30
 @media(max-width:1024px){
   .nav-row{padding:16px 24px}
   .nav-links{gap:20px}
-  .hero-content{padding:60px 24px}
-  .hero-stats{right:24px;bottom:32px}
+  .hero-grid{gap:40px;padding:48px 32px}
+  .hero-video{max-width:460px}
   .sec{padding:64px 24px}
   .approach-bg,.forwho-bg,.where-bg,.journeys-bg,.testi-bg,.faq-bg,.contact-bg{padding-left:24px;padding-right:24px}
   .strip{padding:28px 24px}
@@ -282,13 +310,16 @@ footer{background:var(--gd);border-top:1px solid rgba(201,168,64,.09);padding:30
 
   /* Hero: stats stop floating over the text */
   .hero{min-height:auto;padding-top:70px;padding-bottom:40px;display:block}
-  .hero-content{padding:48px 20px 28px}
+  /* Una sola columna. La columna de texto va primera en el orden del
+     documento, asi que queda arriba sin reordenar nada. */
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:34px;padding:44px 20px 32px}
+  .hero-video{max-width:100%}
   .hero-eye{margin-bottom:22px;letter-spacing:.3em;font-size:.6rem}
   .hero-note{margin-bottom:30px}
   .hero-btns{flex-direction:column;align-items:stretch}
   .btn-g,.btn-o{text-align:center;padding:16px 24px}
-  .hero-stats{position:static;flex-direction:row;flex-wrap:wrap;gap:10px;padding:0 20px 20px}
-  .hero-stats .stat{flex:1 1 30%;padding:11px 14px;text-align:left}
+  .hero-stats{gap:10px;margin-top:32px}
+  .hero-stats .stat{flex:1 1 132px;padding:11px 14px;text-align:left}
   .stat-n{font-size:1.5rem}
   .stat-l{font-size:.53rem;letter-spacing:.12em}
 

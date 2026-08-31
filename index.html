@@ -62,20 +62,36 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-eye">Regenerative Cultural Travel · Colombia</div>
-    <h1>Colombia, at the pace <em>you actually want</em></h1>
-    <p class="hero-sub">ADDA COMMUNITY designs cultural immersion experiences in Colombia for adults 50+. Small groups, thoughtful pacing, and access to real communities.</p>
-    <p class="hero-note">We take care of the structure — so you can be present for what unfolds.</p>
-    <div class="hero-btns">
-      <a href="#journeys" class="btn-g">Start your journey</a>
-      <a href="#experiences" class="btn-o">Explore experiences</a>
+  <!-- Dos columnas independientes: texto | video.
+       El video NO es fondo: es un elemento propio dentro de su columna.
+       Nada se superpone encima de el. -->
+  <div class="hero-grid">
+
+    <div class="hero-content">
+      <div class="hero-eye">Regenerative Cultural Travel · Colombia</div>
+      <h1>Colombia, at the pace <em>you actually want</em></h1>
+      <p class="hero-sub">ADDA COMMUNITY designs cultural immersion experiences in Colombia for adults 50+. Small groups, thoughtful pacing, and access to real communities.</p>
+      <p class="hero-note">We take care of the structure — so you can be present for what unfolds.</p>
+      <div class="hero-btns">
+        <a href="#journeys" class="btn-g">Start your journey</a>
+        <a href="#experiences" class="btn-o">Explore experiences</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">4–10</div><div class="stat-l">travelers per group</div></div>
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">regions of Colombia</div></div>
+        <div class="stat"><div class="stat-n">50+</div><div class="stat-l">designed for this stage of life</div></div>
+      </div>
     </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-n">4–10</div><div class="stat-l">travelers per group</div></div>
-    <div class="stat"><div class="stat-n">5</div><div class="stat-l">regions of Colombia</div></div>
-    <div class="stat"><div class="stat-n">50+</div><div class="stat-l">designed for this stage of life</div></div>
+
+    <div class="hero-media">
+      <video class="hero-video"
+             src="videos/colombia-hero.mp4"
+             autoplay muted loop playsinline
+             preload="metadata"
+             aria-label="Aerial views of Cartagena, Barranquilla, Medellin and the Cocora valley">
+      </video>
+    </div>
+
   </div>
 </section>
 
@@ -97,15 +113,7 @@
         <div class="approach-ql">We organize the journey. What you find in it is personal.</div>
       </div>
     </div>
-    <div class="approach-photo rv" style="transition-delay:.18s">
-      <div class="approach-photo-fallback">
-        <span>Cartagena de Indias</span>
-        <span style="font-size:.6rem;letter-spacing:.35em">Bolívar · Colombia</span>
-      </div>
-      <img src="images/cartagena.jpg" width="1400" height="933" alt="Centro histórico de Cartagena de Indias, Colombia" loading="lazy" decoding="async" onerror="this.style.display='none'">
-      <div class="approach-photo-cap">Centro histórico, Cartagena de Indias · Heritage, and the life inside it.</div>
-    </div>
-  </div>
+   
 </section>
 
 <!-- GALLERY -->
@@ -171,11 +179,7 @@
         <h3>Small groups, intentionally</h3>
         <p>4 to 10 travelers. An operational decision, not a marketing claim.</p>
       </div>
-      <div class="pillar">
-        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 14c0-4 3.6-7.2 8.2-7.2s8.2 3.2 8.2 7.2-3.6 7.2-8.2 7.2c-1.5 0-3-.4-4.2-1.1L4 21l1.2-4.8C4.8 15.4 5 14.7 5 14z"/></svg>
-        <h3>Facilitators, not tour guides</h3>
-        <p>Our team accompanies you through the experience. They don't narrate it for you.</p>
-      </div>
+     
       <div class="pillar">
         <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 3C9.5 3 6 6.5 6 11c0 5.8 8 13.5 8 13.5S22 16.8 22 11c0-4.5-3.5-8-8-8z"/><circle cx="14" cy="10.5" r="2.5" stroke-width="1.2"/></svg>
         <h3>Logistics that don't interrupt</h3>
@@ -206,16 +210,16 @@
         <p class="persona-note">Not looking for something "life-changing" — but for something real, well-held, and worth their time.</p>
         <div class="ptags"><span class="ptag">Meaningful experiences</span><span class="ptag">Local connection</span><span class="ptag">Thoughtful travel</span></div>
       </div>
-      <div class="persona">
-        <h3>The Rebalancing Traveler</h3>
-        <div class="persona-age">55–70 · Worldwide</div>
-        <p>At a stage where time is no longer structured the same way. Travel becomes less about escape and more about recalibration. Looking for a different rhythm, space without pressure, and experiences that don't demand performance.</p>
-        <p class="persona-note">Not searching for answers — but open to seeing things differently.</p>
-        <div class="ptags"><span class="ptag">Slower pace</span><span class="ptag">Space and clarity</span><span class="ptag">Personal rhythm</span></div>
-      </div>
+     <div class="persona">
+  <h3>The Rebalancing Traveler</h3>
+  <div class="persona-age">60+ · Worldwide</div>
+  <p>At a stage where time is no longer structured the same way. Travel becomes about recalibration. Looking for a different rhythm, space without pressure, and experiences that don't demand performance.</p>
+  <p class="persona-note">Not searching for answers — but open to seeing things differently.</p>
+  <div class="ptags"><span class="ptag">Slower pace</span><span class="ptag">Space and clarity</span><span class="ptag">Personal rhythm</span></div>
+</div>
       <div class="persona">
         <h3>The Selective Explorer</h3>
-        <div class="persona-age">60–80 · Worldwide</div>
+        <div class="persona-age">70+ · Worldwide</div>
         <p>Has already traveled extensively. Now chooses carefully. Less interested in covering destinations — more interested in understanding them. Values simplicity, depth, and real conversations over volume.</p>
         <p class="persona-note">They value experiences that are well-organized, without feeling controlled.</p>
         <div class="ptags"><span class="ptag">Depth over volume</span><span class="ptag">Simplicity</span><span class="ptag">Real conversations</span></div>
@@ -405,12 +409,7 @@
         <div class="booking-note">Opens in a new tab · No account needed</div>
       </div>
     </form>
-    <div class="channels">
-      <a href="https://www.linkedin.com/in/andrea-samara-dussan" class="chan" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/viajesadda_/" class="chan" target="_blank">@viajesadda_</a>
-      <a href="mailto:addacommunity@viajesadda.com" class="chan">addacommunity@viajesadda.com</a>
-      <a href="tel:+573217604505" class="chan">+57 321 760 4505</a>
-    </div>
+   
     <p class="contact-fine">No time pressure. If the program is right for you, it will still be right next week.</p>
   </div>
 </section>
@@ -420,9 +419,9 @@
   <div class="f-logo">ADDA COMMUNITY<span>Cultural travel · Colombia</span></div>
   <div class="f-contact"><a href="mailto:addacommunity@viajesadda.com">addacommunity@viajesadda.com</a> &nbsp;·&nbsp; <a href="tel:+573217604505">+57 321 760 4505</a></div>
   <div class="f-social">
-    <a href="https://www.instagram.com/viajesadda_/" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
-    <a href="https://www.linkedin.com/in/andrea-samara-dussan" target="_blank"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.5M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7"/></svg></a>
-    <a href="mailto:addacommunity@viajesadda.com"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
+    <a href="https://www.instagram.com/viajesadda_/" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+    <a href="https://www.linkedin.com/in/andrea-samara-dussan" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.5M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7"/></svg></a>
+    <a href="mailto:addacommunity@viajesadda.com"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg></a>
   </div>
   <div class="f-copy">© 2026 ADDA COMMUNITY · All rights reserved</div>
 </footer>
