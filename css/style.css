@@ -384,8 +384,31 @@ body.modal-open{overflow:hidden}
 /* --- Galeria: columna de imagenes apiladas, sin alturas fijas ---
    width 100% + aspect-ratio + object-fit. Nada de position:absolute,
    nada de height fijo: la galeria crece con su contenido. */
-.modal-gallery{display:flex;flex-direction:column;gap:10px;min-width:0}
-.modal-gallery img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:2px;background:rgba(139,96,53,.08)}
+.modal-gallery{
+  display:flex;
+  flex-direction:row;
+  gap:12px;
+  min-width:0;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  padding-bottom:8px;
+}
+
+.modal-gallery::-webkit-scrollbar{
+  display:none;
+}
+.modal-gallery img{
+  display:block;
+  flex:0 0 85%;
+  width:85%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:2px;
+  background:rgba(139,96,53,.08);
+  scroll-snap-align:start;
+}
 .modal-gallery img:first-child{aspect-ratio:3/2}
 .modal-gallery.is-empty{display:flex;align-items:center;justify-content:center;min-height:150px;border:1px dashed rgba(139,96,53,.28);border-radius:2px;color:var(--l);font-size:.82rem;font-style:italic;text-align:center;padding:20px}
 
@@ -432,4 +455,65 @@ body.modal-open{overflow:hidden}
   .modal-list li{font-size:.92rem}
   .modal-facts dd{font-size:.9rem}
   .modal-x{top:10px;right:10px;width:34px;height:34px}
+}
+/* =========================
+   IMAGE LIGHTBOX
+   ========================= */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.lightbox.open{
+  display:flex;
+}
+
+.lightbox-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.85);
+}
+
+.lightbox img{
+  position:relative;
+  max-width:55vw;
+  max-height:55vh;
+  object-fit:contain;
+  border-radius:4px;
+  z-index:2;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:25px;
+  right:30px;
+  z-index:3;
+
+  width:42px;
+  height:42px;
+
+  border:1px solid rgba(255,255,255,.4);
+  background:rgba(0,0,0,.3);
+
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+}
+@media (max-width: 600px){
+
+  .lightbox-close{
+    top:15px;
+    right:15px;
+
+    width:48px;
+    height:48px;
+
+    font-size:30px;
+  }
+
 }

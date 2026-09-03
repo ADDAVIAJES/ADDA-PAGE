@@ -266,7 +266,7 @@ var DESTINATIONS = {
   /* ---------------------------------------------------------------- 03 --- */
   "salento": {
     title: "Salento",
-    location: "Quindío · Coffee Region",
+   location: "Quindío · Coffee Cultural Landscape",
     images: [
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/57e88ab48d2c26b67907bea8a163b99d1790c9367069b390bc9c41e2ee9beabc.jpg",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/96bc9e2012e5d280ba96c7785a18c9968bb9ab892abd0ca7b88367e5eac45f19.png",
@@ -283,19 +283,23 @@ var DESTINATIONS = {
       drySeason: "December–February and July–August",
       rainySeason: "April–May and October–November"
     },
-    highlights: [
-      "Traditional bahareque architecture and painted facades",
-      "Part of the UNESCO Coffee Cultural Landscape of Colombia",
-      "Calle Real and its artisan workshops",
-      "Regional cooking, particularly river trout",
-      "Willys jeeps, still working vehicles rather than props"
+      highlights: [
+        "Traditional bahareque architecture and painted facades",
+        "Part of the UNESCO Coffee Cultural Landscape of Colombia",
+        "Visit to traditional coffee farms such as Finca El Ocaso",
+        "Connection with local coffee-growing families and rural traditions",
+        "Calle Real and its artisan workshops",
+        "Regional cooking, particularly river trout",
+        "Willys jeeps, still working vehicles rather than props"
     ],
     activities: [
       "Unhurried walk through the historic centre",
       "Visits to craft workshops with the makers present",
       "Regional lunch where locals eat",
       "Viewpoints over the Cocora and Boquía valleys",
-      "Free time in the main square, deliberately unscheduled"
+      "Free time in the main square, deliberately unscheduled",
+      "Experience the coffee process at Finca El Ocaso",
+      "Meet local producers and learn about coffee traditions"
     ]
   },
 
@@ -342,6 +346,7 @@ var DESTINATIONS = {
     images: [
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/c69c485b93f69d518c2688f16eb6f4855c2934e79bcfa7ea23a7d6c9c1986ca9.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/8d/4a/60/castillo-de-san-felipe.jpg?w=1600&h=-1&s=1",
+      "images/caribbean/cartagena-bonavida-sunset.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/e9/02/40/foto-tomada-desde-un.jpg?w=1400&h=-1&s=1"
     ],
     description: "Founded in 1533, Cartagena was for centuries the fortified Caribbean port through which Spain moved silver — and, for far longer than is comfortable to state plainly, enslaved Africans. Its port, fortresses and monuments were inscribed on the UNESCO World Heritage list in 1984. The walled city is the postcard, but Getsemaní, just outside the walls, is where the more honest conversation happens: a historically working-class, Afro-Caribbean neighbourhood now negotiating what heritage tourism does to the people who actually live in it.",
@@ -367,6 +372,7 @@ var DESTINATIONS = {
       "Getsemaní with community guides and local artists",
       "Conversation on heritage tourism and who it serves",
       "Caribbean gastronomy, sitting down and taking time",
+      "Sunset sailing experience aboard Bona Vida Catamaran",
       "Sunset from the walls"
     ]
   },
@@ -567,13 +573,34 @@ function fillGallery(el, images, title){
     return;
   }
   el.className = 'modal-gallery n-' + Math.min(images.length, 4);
-  images.forEach(function(src){
-    var img = document.createElement('img');
-    img.src = src;
-    img.alt = title;
-    img.loading = 'lazy';
-    el.appendChild(img);
+ images.forEach(function(src){
+
+  var img = document.createElement('img');
+
+  img.src = src;
+  img.alt = title;
+  img.loading = 'lazy';
+
+  img.addEventListener('click', function(){
+
+    var lightbox = document.getElementById('imageLightbox');
+    var lightboxImage = document.getElementById('lightboxImage');
+
+    if(lightbox && lightboxImage){
+
+      lightboxImage.src = src;
+      lightboxImage.alt = title;
+
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+
+    }
+
   });
+
+  el.appendChild(img);
+
+});
 }
 
 /* Rellena la tabla de datos rapidos, omitiendo los campos vacios */
@@ -661,3 +688,27 @@ if(destModal){
 document.addEventListener('keydown', function(e){
   if(e.key==='Escape' || e.key==='Esc') closeDestination();
 });
+// Cerrar imagen ampliada
+var imageLightbox = document.getElementById('imageLightbox');
+
+if(imageLightbox){
+
+  imageLightbox.querySelectorAll('[data-lightbox-close]')
+  .forEach(function(el){
+
+    el.addEventListener('click', function(){
+
+      imageLightbox.classList.remove('open');
+      imageLightbox.setAttribute('aria-hidden','true');
+
+      var img = document.getElementById('lightboxImage');
+
+      if(img){
+        img.src = '';
+      }
+
+    });
+
+  });
+
+}
