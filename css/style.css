@@ -507,7 +507,7 @@ body.modal-open{overflow:hidden}
 @media (max-width: 600px){
 
   .lightbox-close{
-    top:90px;
+    top:140px;
     right:15px;
 
     width:48px;
