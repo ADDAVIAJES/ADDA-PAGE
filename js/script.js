@@ -227,43 +227,6 @@ var DESTINATIONS = {
   },
 
   /* ---------------------------------------------------------------- 02 --- */
-  "finca-ocaso": {
-    title: "Finca El Ocaso",
-    location: "Salento · Quindío",
-    /* TODO: Add 3 Finca El Ocaso images.
-       Adda has not provided these URLs yet. Do NOT invent them and do NOT
-       reuse photographs from another destination. When the three URLs are
-       ready, paste them here as strings, one per line, and the gallery will
-       appear automatically. No other change is required. */
-    images: [],
-    description: "A working coffee farm near Salento with roughly a century of continuous cultivation behind it. It sits within the Coffee Cultural Landscape of Colombia, inscribed by UNESCO in 2011 — a designation that recognises not scenery but a way of farming and living that shaped this whole region. The interest here is the full cycle rather than a tasting at the end of it: how the fruit ripens unevenly and must be picked by hand over weeks, how it is depulped, fermented, dried and sorted, and how each of those steps changes what eventually reaches a cup.",
-    experience: "The farm is walked with someone whose family has grown coffee for generations, which changes the register of the visit — you are being shown a livelihood, not a demonstration. Expect to pick, to handle wet parchment, to taste the difference between grades side by side. Slopes are moderate and the route can be shortened. It ends the way it should: sitting down with a cup made from what you just watched being processed.",
-    facts: {
-      location: "Near Salento, Quindío",
-      department: "Quindío",
-      altitude: "Approximately 1,700–1,900 m",
-      temperature: "Generally around 18–20 °C",
-      climate: "Temperate Andean, humid year-round",
-      drySeason: "December–February and July–August",
-      rainySeason: "April–May and October–November"
-    },
-    highlights: [
-      "A working farm with roughly a century of cultivation",
-      "Within the UNESCO Coffee Cultural Landscape of Colombia",
-      "The full process, from picking through to the cup",
-      "Growers explaining their own work in their own words",
-      "Views across the coffee slopes of the Quindío valley"
-    ],
-    activities: [
-      "Hand-picking with a basket, at whatever pace suits",
-      "Following depulping, fermentation and drying step by step",
-      "Roasting and preparation",
-      "Comparative tasting of different grades",
-      "Conversation with the growing family"
-    ]
-  },
-
-  /* ---------------------------------------------------------------- 03 --- */
   "salento": {
     title: "Salento",
    location: "Quindío · Coffee Cultural Landscape",
@@ -303,7 +266,7 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 04 --- */
+  /* ---------------------------------------------------------------- 03 --- */
   "jardin-botanico": {
     title: "Jardín Botánico del Quindío",
     location: "Calarcá · Quindío",
@@ -339,7 +302,7 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 05 --- */
+  /* ---------------------------------------------------------------- 04 --- */
   "cartagena": {
     title: "Cartagena de Indias",
     location: "Bolívar · Caribbean Coast",
@@ -377,11 +340,12 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 06 --- */
+  /* ---------------------------------------------------------------- 05 --- */
   "magdalena": {
     title: "Río Magdalena and the Sombrero Vueltiao",
     location: "Barranquilla · Atlántico",
     images: [
+      "https://www.publimetro.co/resizer/v2/7KHTFCCK3NCELO5ORMRMCVZVDY.jpeg?smart=true&auth=2c346d6cc536f6f8faec45ebd524727628aa1a344f8594ee20d9985c474010f1&width=4032&height=2268",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/61cd3144676b56122589ef1c89f8beabe9dd7f446f7bd4b3dbb68e6979125dd9.jpg",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/62cfef658227116d5ddbe955a94f7d94d53dff6350df6cfca1ac1d7b0c62069a.jpg",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/dd10c0641533b5ebaef54c32ecd66558e52a745352d5db758d0542831d20dfbf.jpg"
@@ -413,7 +377,7 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 07 --- */
+  /* ---------------------------------------------------------------- 06 --- */
   "comuna13": {
     title: "Comuna 13 — San Javier",
     location: "Medellín · Antioquia",
@@ -449,7 +413,7 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 08 --- */
+  /* ---------------------------------------------------------------- 07 --- */
   "santa-elena": {
     title: "Santa Elena",
     location: "Antioquia · Near Medellín",
@@ -485,7 +449,7 @@ var DESTINATIONS = {
     ]
   },
 
-  /* ---------------------------------------------------------------- 09 --- */
+  /* ---------------------------------------------------------------- 08 --- */
   "barranquilla": {
     title: "Barranquilla — Community Activity",
     location: "Atlántico · Caribbean Coast",
@@ -685,11 +649,26 @@ if(destModal){
   });
 }
 
-document.addEventListener('keydown', function(e){
-  if(e.key==='Escape' || e.key==='Esc') closeDestination();
-});
 // Cerrar imagen ampliada
 var imageLightbox = document.getElementById('imageLightbox');
+
+/* La logica de cierre vive en una sola funcion, usada tanto por el boton X
+   y el fondo (clic) como por la tecla ESC. El comportamiento del clic es
+   exactamente el mismo que antes. */
+function closeLightbox(){
+  if(!imageLightbox || !imageLightbox.classList.contains('open')) return false;
+
+  imageLightbox.classList.remove('open');
+  imageLightbox.setAttribute('aria-hidden','true');
+
+  var img = document.getElementById('lightboxImage');
+  if(img){
+    img.src = '';
+  }
+  /* No se toca document.body: si el modal de destino sigue abierto, debe
+     conservar su bloqueo de scroll (clase modal-open). */
+  return true;
+}
 
 if(imageLightbox){
 
@@ -697,18 +676,19 @@ if(imageLightbox){
   .forEach(function(el){
 
     el.addEventListener('click', function(){
-
-      imageLightbox.classList.remove('open');
-      imageLightbox.setAttribute('aria-hidden','true');
-
-      var img = document.getElementById('lightboxImage');
-
-      if(img){
-        img.src = '';
-      }
-
+      closeLightbox();
     });
 
   });
 
 }
+
+/* UN SOLO listener de teclado para ambas capas, por orden de profundidad:
+   el lightbox esta por encima del modal, asi que ESC lo cierra primero y
+   deja el modal de destino abierto detras. Con el lightbox ya cerrado,
+   un segundo ESC cierra el modal, como siempre. */
+document.addEventListener('keydown', function(e){
+  if(e.key!=='Escape' && e.key!=='Esc') return;
+  if(closeLightbox()) return;   /* cerro el lightbox: no sigue hacia el modal */
+  closeDestination();
+});

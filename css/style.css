@@ -268,6 +268,10 @@ footer{background:var(--gd);border-top:1px solid rgba(201,168,64,.09);padding:30
 
 .f-social a:hover{border-color:var(--gold);color:var(--gold)}
 
+/* Enlace legal del pie. Toma el mismo tamano y color que .f-contact para
+   que la fila del footer se lea como una sola linea coherente. */
+.f-legal a{font-size:.85rem;color:rgba(247,242,232,.38);text-decoration:none;transition:color .3s}
+.f-legal a:hover{color:var(--gold)}
 .f-copy{font-size:.6rem;color:rgba(247,242,232,.15)}
 /* REVEAL */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
