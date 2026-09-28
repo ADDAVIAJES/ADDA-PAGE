@@ -345,6 +345,7 @@ var DESTINATIONS = {
     title: "Río Magdalena and the Sombrero Vueltiao",
     location: "Barranquilla · Atlántico",
     images: [
+      "https://tse3.mm.bing.net/th/id/OIP.MRZICKsckGdUNkMc9evo4QHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       "https://www.publimetro.co/resizer/v2/7KHTFCCK3NCELO5ORMRMCVZVDY.jpeg?smart=true&auth=2c346d6cc536f6f8faec45ebd524727628aa1a344f8594ee20d9985c474010f1&width=4032&height=2268",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/61cd3144676b56122589ef1c89f8beabe9dd7f446f7bd4b3dbb68e6979125dd9.jpg",
       "https://cdn.getyourguide.com/image/format=auto%2Cfit=crop%2Cgravity=auto%2Cquality=60%2Cheight=540%2Cdpr=2/tour_img/62cfef658227116d5ddbe955a94f7d94d53dff6350df6cfca1ac1d7b0c62069a.jpg",
